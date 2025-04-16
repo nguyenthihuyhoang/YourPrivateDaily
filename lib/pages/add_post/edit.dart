@@ -2,6 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:flutter_quill_extensions/flutter_quill_extensions.dart';
+import 'package:private_app/configs/locator.dart';
+import 'package:private_app/data/models/posts.dart';
+import 'package:private_app/services/local/db.dart';
 
 class Editor extends StatefulWidget {
   const Editor({super.key});
@@ -31,6 +34,14 @@ class _EditorState extends State<Editor> {
           ),
         ),
         automaticallyImplyLeading: false,
+        actions: [
+          ElevatedButton(
+            onPressed: () {
+              getIt<DbService>().addPost(Posts(id: 1, datetime: '2024232'));
+            },
+            child: Icon(Icons.done),
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 20.0),

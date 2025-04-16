@@ -1,5 +1,9 @@
+import 'package:objectbox/objectbox.dart';
+
+@Entity()
 class Posts {
-  late String id;
+  @Id()
+  late int id;
   String? title;
   String? content;
   String? image;

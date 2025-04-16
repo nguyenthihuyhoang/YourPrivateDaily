@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:private_app/consts/image_app.dart';
+import 'package:private_app/pages/add_post/edit.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -37,7 +38,12 @@ class _HomePageState extends State<HomePage> {
                     Icon(Icons.calendar_month),
                     FloatingActionButton(
                       child: Icon(Icons.add),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Editor()),
+                        );
+                      },
                     ),
                     Icon(Icons.logout),
                   ],
